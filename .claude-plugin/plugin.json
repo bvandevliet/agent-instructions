@@ -1,0 +1,11 @@
+{
+  "name": "agent-instructions",
+  "description": "Bob Vandevliet's personal engineering instructions and skills.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Bob Vandevliet",
+    "url": "https://github.com/bvandevliet"
+  },
+  "repository": "https://github.com/bvandevliet/agent-instructions",
+  "license": "AGPL-3.0-only"
+}
