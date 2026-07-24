@@ -8,7 +8,7 @@
     {
       "name": "agent-instructions",
       "description": "Bob Vandevliet's personal engineering instructions and skills.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "./",
       "repository": "https://github.com/bvandevliet/agent-instructions",
       "license": "AGPL-3.0-only"
