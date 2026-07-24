@@ -30,7 +30,7 @@ Conditionally-scoped content (currently just `.NET` conventions) is the one thin
 ## Non-obvious structural gotchas
 
 - **`.github/plugin/plugin.json` is nested**, not a bare root-level `plugin.json`. This matches the convention in the real `github/awesome-copilot` marketplace (verified directly against it, not just the docs) for a plugin whose root coincides with its marketplace's root.
-- **`version` is duplicated** in each `plugin.json` and its corresponding `marketplace.json` entry, by convention — keep them in sync by hand. Claude Code documents that `plugin.json` wins if they differ; Copilot CLI documents no such precedence, so don't let them drift there.
+- **`version` is duplicated** in each `plugin.json` and its corresponding `marketplace.json` entry. `.github/workflows/publish.yml`'s "Sync plugin manifest versions" step keeps all four in lockstep on every push to main (via GitVersion's `majorMinorPatch`), so don't hand-edit `version` in any of them — it gets overwritten. Claude Code documents that `plugin.json` wins if they differ; Copilot CLI documents no such precedence, so the auto-sync is what prevents drift there.
 - Any `.instructions.md` meant to land in a shared personal folder (`~/.copilot/instructions/`) gets a `bvandevliet-` prefix (hyphenated, matching the kebab-case convention observed across `github/awesome-copilot`'s own instructions files) — that folder can accumulate files from unrelated sources, so a generic name like `general.instructions.md` risks colliding.
 
 ## Editing `scripts/claude-general-instructions.ps1`
