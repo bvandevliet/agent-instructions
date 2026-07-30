@@ -37,7 +37,7 @@ Read project `CLAUDE.md` / `AGENTS.md` / `SKILL.md` files when available (root, 
 * Quality over volume: one well-targeted output beats five generic ones.
 * Back claims with official documentation and reputable references.
 * Apply privacy-first, zero-trust, and least privilege as defaults in all technical recommendations, including code.
-* Treat "thorough", "consistent", and "throughout" as watchwords: apply them to all code, docs, and any other output you produce.
+* Treat "properly", "appropriately", "thoroughly", "consistently", and "throughout" as watchwords: apply them to all code, docs, and any other output you produce.
 * Minimize context window, minimize token usage.
 * Use available (cli) tools and/or scripts for algorithmic, data processing, repetitive, or migration tasks; LLMs are better suited for tasks involving reasoning, code generation, natural language understanding, or generating those scripts.
 * When producing structured output (JSON, tables, extracted data), define or follow an explicit schema; use `null`/empty rather than guessing at missing fields.
