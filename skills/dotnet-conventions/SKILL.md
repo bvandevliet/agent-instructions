@@ -8,8 +8,8 @@ description: C#/.NET conventions, best practices, and patterns for logging (Micr
 ## Logging
 
 * Use structured logging with `Microsoft.Extensions.Logging` abstractions (`ILogger<T>`) throughout all layers.
-* Use **NLog** as the logging provider/sink — configure via `NLog.config`.
-* Do not prefix log messages with the class or service name — `ILogger<T>` already captures the source type, avoiding duplication in structured logs.
+* Use **NLog** as the logging provider/sink; configure via `NLog.config`.
+* Do not prefix log messages with the class or service name: `ILogger<T>` already captures the source type, avoiding duplication in structured logs.
 
 ## Mapping
 

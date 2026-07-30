@@ -3,7 +3,7 @@
 $contentPath = Join-Path $PSScriptRoot '..\instructions\general\CLAUDE.md'
 $content = Get-Content -Raw -Encoding UTF8 -Path $contentPath
 
-# Strip maintainer HTML comments — mirrors Claude Code's own CLAUDE.md handling,
+# Strip maintainer HTML comments: mirrors Claude Code's own CLAUDE.md handling,
 # so notes meant for humans don't spend tokens on the model.
 $content = ($content -replace '(?s)<!--.*?-->', '').TrimStart()
 
