@@ -1,11 +1,11 @@
 ---
 name: recover
-description: Resumes work after an unintentional interruption (dropped connection, crashed session, accidental stop, session/usage limit reached mid-task). Trigger this whenever the user invokes /recover, or says things like "pick up where you left off", "we got cut off", "continue where we stopped", or "resume the task" after an apparent interruption.
+description: Resumes work after an unintentional interruption (dropped connection, crashed session, accidental stop, usage limit reached mid-task). Trigger this whenever the user invokes /recover, or says things like "pick up where you left off", "we got cut off", "continue where we stopped", or "resume the task" after an apparent interruption.
 ---
 
 Treat this exactly as if the user said:
 
-"You were interrupted mid-process unintentionally, possibly because the session/usage limit was reached. Pick up and proceed/continue the task(s) you were doing from where you left off."
+"You were interrupted mid-process unintentionally, possibly because the usage limit was reached. Pick up and proceed/continue the task(s) you were doing from where you left off."
 
 Before resuming, reconcile any dangling state left by the interruption:
 - Your own todo list (e.g. TaskList): if the interrupted session was tracking a multi-step plan, check it first: it's the most direct record of what was left, more reliable than re-deriving it from conversation text alone.

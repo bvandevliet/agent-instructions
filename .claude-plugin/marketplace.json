@@ -1,17 +1,27 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "agent-instructions",
+  "description": "Bob Vandevliet's library/collection of agent engineering instructions and skills for Claude Code.",
+  "version": "1.1.1",
   "owner": {
     "name": "bvandevliet",
     "url": "https://github.com/bvandevliet"
   },
   "plugins": [
     {
-      "name": "agent-instructions",
-      "description": "Bob Vandevliet's personal engineering instructions and skills.",
-      "version": "1.1.1",
-      "source": "./",
-      "repository": "https://github.com/bvandevliet/agent-instructions",
-      "license": "AGPL-3.0-only"
+      "name": "soul",
+      "description": "Bob Vandevliet's general engineering instructions.",
+      "source": "./plugins/soul"
+    },
+    {
+      "name": "context-management",
+      "description": "Bob Vandevliet's context management skills.",
+      "source": "./plugins/context"
+    },
+    {
+      "name": "dotnet-conventions",
+      "description": "Bob Vandevliet's .NET conventions.",
+      "source": "./plugins/dotnet"
     }
   ]
 }
