@@ -1,9 +1,14 @@
 ---
 name: dotnet-conventions
-description: C#/.NET conventions, best practices, and patterns for logging (Microsoft.Extensions.Logging + NLog), testing (xUnit, NSubstitute, AAA), object mapping (Riok.Mapperly), and asyncronous programming. Use whenever writing, reviewing or modifying any C#/.NET code.
+description: C#/.NET conventions and patterns, including logging (Microsoft.Extensions.Logging + NLog), testing (xUnit, NSubstitute, AAA), object mapping (Riok.Mapperly), asyncronous programming, and querying official Microsoft/.NET documentation, best practices, configuration options, usage examples and working code samples. Use whenever writing, reviewing or modifying any C#/.NET code.
 ---
 
 # .NET / C#
+
+This skill contains opinionated C#/.NET conventions and patterns, meant to complement (not replace) official Microsoft documentation, which remains the primary reference. Use the `microsoft-learn` MCP server (`microsoft_docs_search`, `microsoft_code_sample_search`, `microsoft_docs_fetch` — see the server's own tool instructions for the basic workflow) for authoritative details and best practices.
+
+- Be specific: include the namespace/package and version (`BlobClient UploadAsync Azure.Storage.Blobs`, not `Azure Functions`).
+- Verify before trusting generated code when a method name seems "too convenient", when SDK major versions might be mixed, or when using an API for the first time.
 
 ## Logging
 
