@@ -1,18 +1,3 @@
-<!--
-maintainer note: a plugin can't ship this file as CLAUDE.md or via ~/.claude/rules/: neither is a supported
-plugin component (only skills/agents/hooks/mcpServers/lspServers are; rules-via-plugin is tracked at
-https://github.com/anthropics/claude-code/issues/21163, closed as duplicate, still unshipped as of 2026-07-24).
-So ../../hooks/hooks.json reads this exact file via a SessionStart hook and injects it as additionalContext.
-That's how plugin installs actually get it into every session today. This file is still the manual-copy
-source for anyone not using the plugin (e.g. pasting into ~/.claude/CLAUDE.md directly, a single fixed-name
-file, so no collision risk today).
-
-When rules-via-plugin ships: switch to it and drop the hook, AND rename this file with a unique prefix at
-that point (matching bvandevliet-general.instructions.md). Once the plugin ships it straight into
-~/.claude/rules/, it lands in the same kind of shared, arbitrarily-named-file folder as Copilot's
-~/.copilot/instructions/. The collision risk only becomes real at that point, not before.
--->
-
 # General Instructions
 
 Read project `copilot-instructions.md` / `AGENTS.md` files when available (root, `.github/`, and other standardized locations): you don't natively pick these up the way you do `CLAUDE.md`. Follow these and all project-specific instruction files consistently. Project-level instructions take precedence over this file where they conflict; both take precedence over any agent/skill where they conflict.

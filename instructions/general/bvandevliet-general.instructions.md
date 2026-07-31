@@ -3,16 +3,6 @@ description: General engineering practices and guidelines
 applyTo: '**'
 ---
 
-<!--
-maintainer note: no Copilot plugin component covers always-on instructions (agents/skills/hooks/mcpServers
-only, per docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-creating) - this file
-isn't installed by .github/plugin/plugin.json, which only ships skills/. Manual placement is the only path
-today: the README's one-click link (vscode:chat-instructions/install?url=...) drops this file into
-~/.copilot/instructions/, or copy it into a project's own .github/instructions/. Unlike CLAUDE.md's HTML
-comment, Copilot's own comment-stripping behavior for .instructions.md files is unconfirmed, so treat this
-note as possibly visible to the model too - it's harmless either way.
--->
-
 # General Instructions
 
 Read project `CLAUDE.md` / `AGENTS.md` / `SKILL.md` files when available (root, `.claude/`, `skills/`, and other standardized locations): you don't natively pick these up the way you do `copilot-instructions.md`. Follow these and all project-specific instruction files consistently. Project-level instructions take precedence over this file where they conflict; both take precedence over any agent/skill where they conflict.
