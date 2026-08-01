@@ -91,4 +91,4 @@ Before attempting any task, review all descriptions of all available skills. For
 
 * Follow `.editorconfig` for code style guidelines, conventions, and formatting rules, when available.
 * Use meaningful and descriptive names for variables, methods, classes, and other identifiers.
-* Ensure code is well-documented with clear inline comments that explain behavior, rationale, and fallback paths in complex logic.
+* Ensure code is well-documented with clear inline comments that explain non-obvious behavior, rationale, and fallback paths in complex logic. Don't use comments as a changelog — they should reflect the current state, not a trail of past decisions; that belongs in version control.
