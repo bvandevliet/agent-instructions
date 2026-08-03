@@ -22,6 +22,11 @@
       "name": "dotnet-conventions",
       "description": "Bob Vandevliet's .NET conventions.",
       "source": "./plugins/dotnet"
+    },
+    {
+      "name": "documentation",
+      "description": "Bob Vandevliet's technical end-user documentation writing skills.",
+      "source": "./plugins/documentation"
     }
   ]
 }
