@@ -1,0 +1,27 @@
+#!/bin/sh
+# Enforces the "Never use em dashes" rule (plugins/soul/instructions/general.instructions.md)
+# on staged prose files. Backstops the PreToolUse hook for anything committed outside Claude
+# Code, e.g. Copilot CLI (no working PreToolUse dispatch as of 2026-08-05, see CLAUDE.md),
+# manual edits, or other tools.
+#
+# Opt in with: git config core.hooksPath .githooks
+
+staged=$(git diff --cached --name-only --diff-filter=ACM -- '*.md' '*.mdx' '*.txt')
+if [ -z "$staged" ]; then
+    exit 0
+fi
+
+if command -v pwsh >/dev/null 2>&1; then
+    ps_exe=pwsh
+else
+    ps_exe=powershell
+fi
+
+repo_root=$(git rev-parse --show-toplevel)
+old_ifs=$IFS
+IFS='
+'
+set -- $staged
+IFS=$old_ifs
+
+"$ps_exe" -NoProfile -ExecutionPolicy Bypass -File "$repo_root/scripts/check-em-dash.ps1" -Files "$@"
