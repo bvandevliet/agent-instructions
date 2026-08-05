@@ -57,7 +57,7 @@ Follow these and all project-specific instruction files consistently. Project-le
 
 ## Eagerly Loading Skills
 
-Before attempting any task, review all descriptions of all available skills. For each skill that covers the task domain, even partially, load its full context before proceeding. Multiple skills may apply; load all relevant ones before proceeding. When in doubt, load it: a false positive is preferable to missing specialized instructions or domain knowledge. Do not rely on general knowledge when a relevant skill is available.
+Before attempting any task, review all descriptions of all available skills, and before each phase of a multi-step workflow, check whether any available skill has become newly relevant. Loading a task-specific or workflow skill does not substitute for this check: before the first action that touches a given language, framework, or file type, explicitly confirm whether a matching convention or domain skill exists and load it too. For each skill that covers the task domain, even partially, load its full context before proceeding. Multiple skills may apply; load all relevant ones before proceeding. When in doubt, load it: a false positive is preferable to missing specialized instructions or domain knowledge. Do not rely on general knowledge when a relevant skill is available.
 
 ## Code and Engineering Standards
 

@@ -5,7 +5,7 @@ description: C#/.NET conventions and patterns, including logging (Microsoft.Exte
 
 # .NET / C#
 
-This skill contains opinionated C#/.NET conventions and patterns, meant to complement (not replace) official Microsoft documentation, which remains the primary reference. Use the `microsoft-learn` MCP server (`microsoft_docs_search`, `microsoft_code_sample_search`, `microsoft_docs_fetch`; see the server's own tool instructions for the basic workflow) for authoritative details and best practices.
+This skill contains opinionated C#/.NET conventions and patterns, meant to complement (not replace) official Microsoft documentation, which remains the primary reference. Use the `microsoft-learn` MCP server (`microsoft_docs_search`, `microsoft_code_sample_search`, `microsoft_docs_fetch`; see the server's own tool instructions for the basic workflow) for authoritative details and best practices on Microsoft technologies.
 
 - Be specific: include the namespace/package and version (`BlobClient UploadAsync Azure.Storage.Blobs`, not `Azure Functions`).
 - Verify before trusting generated code when a method name seems "too convenient", when SDK major versions might be mixed, or when using an API for the first time.
