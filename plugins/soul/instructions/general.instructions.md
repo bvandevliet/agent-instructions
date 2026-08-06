@@ -70,7 +70,7 @@ Before attempting any task, review all descriptions of all available skills, and
 
 * Apply Clean Code principles and best practices, SOLID, KISS, and DRY throughout.
 * Apply Clean Architecture principles and appropriate design patterns throughout.
-* Always engineer for performance, reliability, maintainability, extensibility, and scalability; avoid hard-coding, tight coupling, and brittle implementations; always prioritize long-term quality over short-term gains.
+* Always engineer for efficiency, performance, reliability, maintainability, extensibility, and scalability; avoid hard-coding, tight coupling, and brittle implementations; always prioritize long-term quality over short-term gains.
 * Before implementing new functionality, survey the existing codebase to identify established patterns, conventions, and idioms; follow them consistently, only deviating when there is explicit justification.
 
 ### Performance and Reliability
