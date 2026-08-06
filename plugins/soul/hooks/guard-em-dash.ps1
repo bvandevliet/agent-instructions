@@ -12,10 +12,10 @@
 # spawns, including hooks). An opt-out list would need every non-Claude host enumerated in
 # advance to stay safe; this fails closed by default against anything unverified, including
 # hosts that don't exist yet. Confirmed by direct testing (2026-08-05, Copilot CLI 1.0.78) that
-# Copilot CLI never invokes plugin PreToolUse hooks at all -- not a tool-name mismatch (its
+# Copilot CLI never invokes plugin PreToolUse hooks at all: not a tool-name mismatch (its
 # file-write tools are named "create"/"edit", not "Write"/"Edit") but the event itself goes
 # unfired even when the matcher is widened to those names or the event key is renamed to
-# Copilot's internal "preToolsExecution" processor name -- and that it doesn't set CLAUDECODE
+# Copilot's internal "preToolsExecution" processor name, and that it doesn't set CLAUDECODE
 # itself (unlike CLAUDE_PLUGIN_ROOT/CLAUDE_PLUGIN_DATA, which it deliberately mirrors onto its
 # own value for compatibility, since its hooks.json commands reference ${CLAUDE_PLUGIN_ROOT}).
 if (-not $env:CLAUDECODE) {
