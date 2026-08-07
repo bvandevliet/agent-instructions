@@ -96,7 +96,7 @@ for ($i = 0; $i -lt $lines.Length; $i++) {
 $occurrenceNoun = if ($hits.Count -eq 1) { 'occurrence' } else { 'occurrences' }
 $pronoun = if ($hits.Count -eq 1) { 'it' } else { 'them' }
 $locations = $hits -join "; "
-$reason = "Blocked by the 'soul' plugin's Language/Writing rule: 'Never use em dashes ($emDash): use a colon, semicolon, or comma instead, whichever the sentence's grammar calls for.' (general.instructions.md). Found $($hits.Count) $occurrenceNoun; fix $pronoun before retrying: $locations"
+$reason = 'Blocked by the "Language/Writing Rules": Never use em dashes ($emDash): use a colon, semicolon, or comma instead, whichever the sentence''s grammar calls for. Found $($hits.Count) $occurrenceNoun; fix $pronoun before retrying: $locations'
 
 $output = @{
     hookSpecificOutput = @{
