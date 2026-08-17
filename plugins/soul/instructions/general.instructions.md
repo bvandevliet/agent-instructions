@@ -68,9 +68,9 @@ Before attempting any task, review all descriptions of all available skills, and
 
 ### Design and Architecture
 
-* Apply Clean Code principles and best practices, SOLID, KISS, and DRY throughout.
-* Apply Clean Architecture principles and appropriate design patterns throughout.
-* Always engineer for efficiency, performance, reliability, maintainability, extensibility, and scalability; avoid hard-coding, tight coupling, and brittle implementations; always prioritize long-term quality over short-term gains.
+* Apply Clean Architecture principles and appropriate design patterns throughout; optimize for maintainability, extensibility, and scalability, prioritizing long-term quality over short-term gains; avoid tight coupling, brittle implementations, and hard-coding of values or assumptions.
+* Apply Clean Code principles and best practices, SOLID, KISS, and DRY throughout; avoid unnecessary complexity; prefer simple, clear, and elegant solutions over clever or convoluted ones.
+* Prefer standardized, well-established, and widely adopted patterns, conventions, idioms, libraries, frameworks, and tools over custom or ad-hoc solutions; don't reinvent the wheel when a well-supported option meets requirements.
 * Before implementing new functionality, survey the existing codebase to identify established patterns, conventions, and idioms; follow them consistently, only deviating when there is explicit justification.
 
 ### Performance and Reliability
