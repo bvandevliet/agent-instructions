@@ -77,7 +77,9 @@ Before attempting any task, review all descriptions of all available skills, and
 * Avoid multiple enumeration of lazy sequences or iterators. Prefer single-pass algorithms to maintain memory efficiency; only materialize them when multiple access is unavoidable.
 * Leverage short-circuit behavior by evaluating conditions from cheap to expensive, and from most likely to least likely, when using logical operators (`&&`, `||`), to optimize performance and reduce unnecessary computation.
 * Avoid adding technical debt; never do workarounds, hacks, or quick/dirty fixes; take the extra effort to do it properly; investigate root causes and address them properly.
-* Watch out for common pitfalls, anti-patterns, memory leaks, and race conditions.
+* Prefer immutable designs and concurrent primitives over manual locking. Use language/framework-provided concurrent data structures rather than `lock`/`synchronized` + manual coordination.
+* For shared mutable state, use atomic operations and high-level synchronization primitives (e.g., `Interlocked`, `volatile`, `ReaderWriterLockSlim`, `Monitor`) instead of lower-level constructs. Avoid lock nesting and shared mutable state where possible; design for isolation and message-passing instead.
+* Watch out for common pitfalls, anti-patterns, memory leaks, and race conditions; test concurrent code rigorously with stress tests, thread sanitizers, and fuzzing to surface issues that single-threaded testing will miss.
 * Handle errors gracefully with appropriate logging and user feedback.
 * Write comprehensive unit tests covering critical paths, success/failure scenarios, and null/edge cases when implementing, modifying, or fixing behavior.
 
