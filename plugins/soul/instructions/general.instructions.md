@@ -82,6 +82,7 @@ Before attempting any task, review all descriptions of all available skills, and
 * Watch out for common pitfalls, anti-patterns, memory leaks, and race conditions; test concurrent code rigorously with stress tests, thread sanitizers, and fuzzing to surface issues that single-threaded testing will miss.
 * Handle errors gracefully with appropriate logging and user feedback.
 * Write comprehensive unit tests covering critical paths, success/failure scenarios, and null/edge cases when implementing, modifying, or fixing behavior.
+* When a fix for a bug turns out to be adopting an existing correct pattern applied inconsistently, lock it in with a test, then audit every other place that pattern should apply, align them, and add matching test coverage.
 
 ### Security
 
