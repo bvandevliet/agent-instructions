@@ -1,15 +1,5 @@
 [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
 
-# Mechanically enforces the "before each phase of a multi-step workflow, check whether any
-# available skill has become newly relevant" half of the "Eagerly Loading Skills" rule in
-# general.instructions.md. That rule alone doesn't reliably survive a long, task-specific workflow
-# (e.g. a multi-phase feature-dev skill) dominating the model's attention for many turns after the
-# initial skill scan; confirmed directly: a full C#/.NET feature implementation ran through
-# several feature-dev phases without ever loading a directly-on-point convention skill, despite
-# that skill's own description saying "Use whenever writing, reviewing or modifying any C#/.NET
-# code." A generic, content-agnostic nudge (rather than hard-blocking on any specific skill or file
-# type) keeps this reusable across every task domain instead of only the one that prompted it.
-#
 # Fired from two hook events, registered separately in hooks.json against this same script:
 #   - UserPromptSubmit: covers a "turn" from the human's side, once per submitted message.
 #   - PostToolUse (matcher: TaskUpdate): covers a "phase/step" from the model's side, fired only
@@ -70,12 +60,11 @@ function Find-LastPromptLineIndex($lines) {
 
 if ($eventName -eq 'UserPromptSubmit') {
     # Skip on the very first prompt of a session: SessionStart just injected the full
-    # general.instructions.md content moments earlier (including this exact "Eagerly Loading
-    # Skills" text verbatim), so reminding again here would be immediate duplication of something
-    # still fresh. From the second prompt onward, enough could have happened since SessionStart
-    # (or since the last reminder) that it's no longer redundant. If the transcript can't be read
-    # at all, we can't tell whether this is the first prompt, so default to firing rather than
-    # silently suppressing on uncertainty.
+    # general.instructions.md content moments earlier, so reminding again here would be immediate
+    # duplication of something still fresh. From the second prompt onward, enough could have
+    # happened since SessionStart (or since the last reminder) that it's no longer redundant.
+    # If the transcript can't be read at all, we can't tell whether this is the first prompt, so
+    # default to firing rather than silently suppressing on uncertainty.
     $lines = Get-TranscriptLines $payload.transcript_path
     if ($null -ne $lines -and (Find-LastPromptLineIndex $lines) -eq -1) {
         exit 0
@@ -124,7 +113,7 @@ if ($eventName -eq 'PostToolUse') {
     }
 }
 
-$reason = 'Before continuing: reconsider whether any available skill has become newly relevant to this turn/phase, even partially. Multiple skills may apply; load all that haven''t already been loaded earlier in this session, rather than relying on general knowledge (see the "## Eagerly Loading Skills" instruction).'
+$reason = 'Before continuing: keep following `# General Instructions`; they remain fully in effect throughout the entire session, not just at the start.'
 
 $output = @{
     hookSpecificOutput = @{
