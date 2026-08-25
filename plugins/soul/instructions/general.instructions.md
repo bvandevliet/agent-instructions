@@ -71,6 +71,7 @@ Before attempting any task, review all descriptions of all available skills, and
 * Apply Clean Code principles and best practices, SOLID, KISS, and DRY throughout; avoid unnecessary complexity; prefer simple, clear, and elegant solutions over clever or convoluted ones.
 * Prefer standardized, well-established, and widely adopted patterns, conventions, idioms, libraries, frameworks, and tools over custom or ad-hoc solutions; don't reinvent the wheel when a well-supported option meets requirements.
 * Before implementing new functionality, survey the existing codebase to identify established patterns, conventions, and idioms; follow them consistently, only deviating when there is explicit justification.
+* Write the minimum code that solves the problem: no features beyond what was asked, no abstractions for single-use code, no speculative flexibility or configurability, no error handling for scenarios that cannot occur. If a change balloons past what the task warrants, stop and rewrite it smaller. Judge every result against: would a senior engineer call this overcomplicated?
 
 ### Performance and Reliability
 
