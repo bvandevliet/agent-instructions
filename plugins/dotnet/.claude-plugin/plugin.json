@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "dotnet-conventions",
   "description": "Bob Vandevliet's .NET conventions.",
-  "version": "2.3.3",
+  "version": "2.4.0",
   "author": {
     "name": "Bob Vandevliet",
     "url": "https://github.com/bvandevliet"
