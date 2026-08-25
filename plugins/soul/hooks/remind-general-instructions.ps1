@@ -11,11 +11,14 @@
 # a UI-only systemMessage that the model never sees), confirmed via the official hooks
 # reference (https://code.claude.com/docs/en/hooks.md).
 #
-# Claude Code-only, opt-in rather than opt-out: see guard-em-dash.ps1 for the $env:CLAUDECODE
-# rationale (same applies here verbatim).
-if (-not $env:CLAUDECODE) {
-    exit 0
-}
+# Not gated to Claude Code: live-tested 2026-08-25 against Copilot CLI 1.0.78 and confirmed by
+# direct user report for VS Code Copilot Chat, both of which dispatch UserPromptSubmit/SessionStart
+# from a plugin's hooks.json (unlike PreToolUse with a tool-name matcher, see guard-em-dash.ps1).
+# The transcript-format heuristics below (Find-LastPromptLineIndex etc.) assume Claude Code's JSONL
+# transcript shape and won't match on other hosts' transcript formats, but that's already handled
+# safely: "transcript readable but no matching lines found" is indistinguishable from "first prompt
+# of session" and both fall through to firing (documented below as the uncertainty default), so the
+# worst case on a non-Claude host is a reminder on every turn instead of skipping the first.
 
 $stdin = [Console]::In.ReadToEnd().TrimStart([char]0xFEFF)
 try {
