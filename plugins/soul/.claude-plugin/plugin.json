@@ -9,5 +9,5 @@
   },
   "repository": "https://github.com/bvandevliet/agent-instructions",
   "license": "AGPL-3.0-only",
-  "hooks": "./hooks/hooks.json"
+  "hooks": "./hooks/hooks-all.json"
 }
