@@ -11,12 +11,6 @@ if [ -z "$staged" ]; then
     exit 0
 fi
 
-if command -v pwsh >/dev/null 2>&1; then
-    ps_exe=pwsh
-else
-    ps_exe=powershell
-fi
-
 repo_root=$(git rev-parse --show-toplevel)
 old_ifs=$IFS
 IFS='
@@ -24,4 +18,4 @@ IFS='
 set -- $staged
 IFS=$old_ifs
 
-"$ps_exe" -NoProfile -ExecutionPolicy Bypass -File "$repo_root/scripts/check-em-dash.ps1" -Files "$@"
+"$repo_root/scripts/check-em-dash.sh" "$@"

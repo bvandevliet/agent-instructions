@@ -30,8 +30,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: "Check for em dashes"
-        shell: pwsh
-        run: ./scripts/check-em-dash.ps1
+        run: ./scripts/check-em-dash.sh
 
       - name: "Sync plugin manifest versions"
         if: ${{ env.IS_MAIN == 'true' }}
