@@ -3,6 +3,8 @@ Bob Vandevliet's library/collection of agent engineering instructions and skills
 
 ## Install
 
+Powershell 7+ is required for the plugin hooks to work. Make sure it's installed and available in your PATH.
+
 **Claude Code**: install the plugin; general instructions and skills load automatically every session:
 
 ```
