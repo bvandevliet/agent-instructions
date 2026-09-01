@@ -102,7 +102,7 @@ $pronoun = if ($hits.Count -eq 1) { 'it' } else { 'them' }
 $locations = $hits -join "; "
 # Double-quoted (not single-quoted): must interpolate $emDash/$hits/etc, otherwise the agent sees
 # the literal PowerShell variable syntax instead of the actual violating text and locations.
-$reason = "Blocked by the `"Language/Writing Rules`": Never use em dashes ($emDash): use a colon, semicolon, or comma instead, whichever the sentence's grammar calls for. Found $($hits.Count) $occurrenceNoun; fix $pronoun before retrying: $locations"
+$reason = "Blocked by general instructions section ""## Language/Writing Rules"": Never use em dashes ($emDash): use a colon, semicolon, or comma instead, whichever the sentence's grammar calls for. Found $($hits.Count) $occurrenceNoun; fix $pronoun before retrying: $locations"
 
 $output = @{
     hookSpecificOutput = @{
