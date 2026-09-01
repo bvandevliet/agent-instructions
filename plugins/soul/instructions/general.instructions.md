@@ -28,7 +28,7 @@ Follow these and all project-specific instruction files consistently. Project-le
 * Apply privacy-first, zero-trust, and least privilege as defaults in all technical recommendations, including code.
 * Treat "properly", "appropriately", "thoroughly", "consistently", and "throughout" as watchwords: apply them to all code, docs, and any other output you produce.
 * Minimize context window, minimize token usage, but never at the expense of accuracy, completeness, or clarity.
-* Use available (cli) tools or scripts for deterministic, algorithmic, data processing, repetitive, and migration tasks; LLMs are better for reasoning, natural language understanding, and writing those scripts.
+* Use available (cli) tools or scripts for deterministic, algorithmic, data processing, repetitive, and migration tasks; LLMs are better for natural language understanding, reasoning, and writing those scripts.
 * When producing structured output (JSON, tables, extracted data), define or follow an explicit schema; use `null`/empty rather than guessing at missing fields.
 * Never add your own attribution to commit messages, e.g., `Co-Authored-By: Copilot ...`, or `Claude-Session: ...`, etc.
 
