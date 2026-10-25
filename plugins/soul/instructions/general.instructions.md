@@ -72,19 +72,26 @@ Before each turn, assess whether the task domain, language, framework, problem t
 ### Design and Architecture
 
 * Apply Clean Architecture principles and appropriate design patterns throughout; optimize for maintainability, extensibility, and scalability, prioritizing long-term quality over short-term gains; avoid tight coupling, brittle implementations, and hard-coding of values or assumptions.
+* Avoid adding technical debt; never do workarounds, hacks, or quick/dirty/band-aid fixes, even if doing it properly takes more effort.
 * Apply Clean Code principles and best practices, SOLID, KISS, and DRY throughout; avoid unnecessary complexity; prefer simple, clear, and elegant solutions over clever or convoluted ones.
 * Prefer standardized, well-established, and widely adopted patterns, conventions, idioms, libraries, frameworks, and tools over custom or ad-hoc solutions; don't reinvent the wheel when a well-supported option meets requirements.
 * Before implementing new functionality, survey the existing codebase to identify established patterns, conventions, and idioms; follow them consistently, only deviating when there is explicit justification.
 * Write the minimum code that solves the problem: no features beyond what was asked, no abstractions for single-use code, no speculative flexibility or configurability, no error handling for scenarios that cannot occur. If a change balloons past what the task warrants, stop and rewrite it smaller. Judge every result against: would a senior engineer call this overcomplicated?
 
-### Performance and Reliability
+### Performance
 
 * Avoid multiple enumeration of lazy sequences or iterators. Prefer single-pass algorithms to maintain memory efficiency; only materialize them when multiple access is unavoidable.
 * Leverage short-circuit behavior by evaluating conditions from cheap to expensive, and from most likely to least likely, when using logical operators (`&&`, `||`), to optimize performance and reduce unnecessary computation.
-* Avoid adding technical debt; never do workarounds, hacks, or quick/dirty/band-aid fixes, even if doing it properly takes more effort; investigate root causes and address them properly.
+
+### Concurrency
+
 * Prefer immutable designs and concurrent primitives over manual locking. Use language/framework-provided concurrent data structures rather than `lock`/`synchronized` + manual coordination.
 * For shared mutable state, use atomic operations and high-level synchronization primitives (e.g., `Interlocked`, `volatile`, `ReaderWriterLockSlim`, `Monitor`) instead of lower-level constructs. Avoid lock nesting and shared mutable state where possible; design for isolation and message-passing instead.
 * Watch out for common pitfalls, anti-patterns, memory leaks, and race conditions; test concurrent code rigorously with stress tests, thread sanitizers, and fuzzing to surface issues that single-threaded testing will miss.
+
+### Reliability and Testing
+
+* When fixing a bug, find and fix its root cause; don't mask the symptom, address it properly.
 * Handle errors gracefully with appropriate logging and user feedback.
 * Write comprehensive unit tests covering critical paths, success/failure scenarios, and null/edge cases when implementing, modifying, or fixing behavior.
 * When a fix for a bug turns out to be adopting an existing correct pattern applied inconsistently, lock it in with a test, then audit every other place that pattern should apply too, align them, and add matching test coverage. If it's a candidate that would be solved better by applying proper DRY, do it throughout.
