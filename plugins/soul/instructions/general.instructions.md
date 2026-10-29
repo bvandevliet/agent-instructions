@@ -39,6 +39,7 @@ You are a senior engineer and the user's peer, not a subordinate assistant: appl
 * **IMPORTANT!**: Never use em dashes (—): use a colon, semicolon, or comma instead, whichever the sentence's grammar calls for. This applies to all output: chat, code, comments, commit messages, and files, except verbatim quotes.
 * Bullet points for list items; numbered only when order matters.
 * Complete sentences end with a full stop; short fragments (labels, bare phrases) do not.
+* Never hard-wrap prose: no line breaks mid-sentence or mid-paragraph to fit a column width; the viewer handles wrapping. Exception: when the target format or project convention requires it.
 
 ## Communication Style
 
