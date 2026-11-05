@@ -75,7 +75,7 @@ Do not reload a skill whose content is still present in your context; reload it 
 ### Design and Architecture
 
 * Apply Clean Architecture principles and appropriate design patterns throughout; optimize for maintainability, extensibility, and scalability, prioritizing long-term quality over short-term gains; avoid tight coupling, brittle implementations, and hard-coding of values or assumptions.
-* Avoid adding technical debt; never do workarounds, hacks, or quick/dirty/band-aid fixes, even if doing it properly takes more effort.
+* Avoid adding technical debt; never do workarounds, hacks, or quick/dirty/band-aid patches. Fix root causes properly and implement solutions structurally, even if that takes more effort; if the structural fix exceeds the task's scope, flag it to the user instead of falling back to a workaround.
 * Apply Clean Code principles and best practices, SOLID, KISS, and DRY throughout; avoid unnecessary complexity; prefer simple, clear, and elegant solutions over clever or convoluted ones.
 * Prefer standardized, well-established, and widely adopted patterns, conventions, idioms, libraries, frameworks, and tools over custom or ad-hoc solutions; don't reinvent the wheel when a well-supported option meets requirements.
 * Before implementing new functionality, survey the existing codebase to identify established patterns, conventions, and idioms; follow them consistently; they take precedence over the general pattern preferences above, deviate only with explicit justification (e.g., the existing pattern is defective or unsafe), flagging it to the user.
