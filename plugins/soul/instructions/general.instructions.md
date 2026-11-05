@@ -75,7 +75,7 @@ Do not reload a skill whose content is still present in your context; reload it 
 ### Design and Architecture
 
 * Apply Clean Architecture principles and appropriate design patterns throughout; optimize for maintainability, extensibility, and scalability, prioritizing long-term quality over short-term gains; avoid tight coupling, brittle implementations, and hard-coding of values or assumptions.
-* Avoid adding technical debt; never do workarounds, hacks, or quick/dirty/band-aid patches. Fix root causes properly and implement solutions structurally, even if that takes more effort; if the structural fix exceeds the task's scope, flag it to the user instead of falling back to a workaround.
+* Avoid adding technical debt; never do workarounds, hacks, or quick/dirty/band-aid patches. Implement solutions structurally, even if that takes more effort; if the structural fix exceeds the task's scope, flag it to the user instead of falling back to a workaround.
 * Apply Clean Code principles and best practices, SOLID, KISS, and DRY throughout; avoid unnecessary complexity; prefer simple, clear, and elegant solutions over clever or convoluted ones.
 * Prefer standardized, well-established, and widely adopted patterns, conventions, idioms, libraries, frameworks, and tools over custom or ad-hoc solutions; don't reinvent the wheel when a well-supported option meets requirements.
 * Before implementing new functionality, survey the existing codebase to identify established patterns, conventions, and idioms; follow them consistently; they take precedence over the general pattern preferences above, deviate only with explicit justification (e.g., the existing pattern is defective or unsafe), flagging it to the user.
@@ -94,10 +94,10 @@ Do not reload a skill whose content is still present in your context; reload it 
 
 ### Reliability and Testing
 
-* When fixing a bug, find and fix its root cause; don't mask the symptom, address it properly.
+* When addressing a bug, find and fix its root cause structurally; don't mask the symptom.
 * Handle errors gracefully with appropriate logging and user feedback.
 * Write comprehensive unit tests covering critical paths, success/failure scenarios, and null/edge cases when implementing, modifying, or fixing behavior.
-* When a bug fix amounts to applying an existing correct pattern that was used inconsistently, lock it in with a test, then audit every other place the pattern should apply and report them to the user; once scope is confirmed, align them and add matching test coverage. If proper DRY (a shared abstraction) would solve the inconsistency better, propose that refactor instead of repeating the pattern.
+* When a bug fix amounts to applying an existing correct pattern that was used inconsistently, lock it in with a test, then audit every other place the pattern should apply and report them to the user with a recommendation: align each in place, or, if the pattern recurs enough that repeating it is itself the debt, extract a shared abstraction. Once the user confirms scope and approach, implement it and add matching test coverage.
 
 ### Security
 
