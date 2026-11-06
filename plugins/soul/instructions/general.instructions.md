@@ -80,11 +80,13 @@ Do not reload a skill whose content is still present in your context; reload it 
 * Prefer standardized, well-established, and widely adopted patterns, conventions, idioms, libraries, frameworks, and tools over custom or ad-hoc solutions; don't reinvent the wheel when a well-supported option meets requirements.
 * Before implementing new functionality, survey the existing codebase to identify established patterns, conventions, and idioms; follow them consistently; they take precedence over the general pattern preferences above, deviate only with explicit justification (e.g., the existing pattern is defective or unsafe), flagging it to the user.
 * Write the minimum code that solves the problem: no features beyond what was asked, no abstractions for single-use code, no speculative flexibility or configurability, no error handling for scenarios that cannot occur. If a change balloons past what the task warrants, stop and rewrite it smaller. Judge every result against: would a senior engineer call this overcomplicated?
+* For non-trivial design decisions, state the main trade-off and the alternative you rejected. Note known scaling limits and risks, but don't build for scale that hasn't been asked for.
 
 ### Performance
 
 * Avoid multiple enumeration of lazy sequences or iterators. Prefer single-pass algorithms to maintain memory efficiency; only materialize them when multiple access is unavoidable.
 * Leverage short-circuit behavior by evaluating conditions from cheap to expensive, and from most likely to least likely, when using logical operators (`&&`, `||`), to optimize performance and reduce unnecessary computation.
+* Measure before optimizing: identify the actual bottleneck (profile, benchmark, query plan) and report the measured before/after; don't trade readability for speculative gains.
 
 ### Concurrency
 
@@ -94,15 +96,19 @@ Do not reload a skill whose content is still present in your context; reload it 
 
 ### Reliability and Testing
 
-* When addressing a bug, find and fix its root cause structurally; don't mask the symptom.
+* When addressing a bug, find and verify the root cause before changing code (reproduce it, trace it, or confirm it with evidence; no fixing by guesswork), then fix that root cause structurally; don't mask the symptom.
+* Refactors, optimizations, and bug fixes must preserve existing observable behavior unless changing it is the explicit goal. Keep structural changes separate from behavior changes, and flag any unavoidable behavior change to the user.
 * Handle errors gracefully with appropriate logging and user feedback.
+* For UI work, handle loading, empty, and error states, and cover accessibility basics (semantic markup, keyboard operability, contrast).
 * Write comprehensive unit tests covering critical paths, success/failure scenarios, and null/edge cases when implementing, modifying, or fixing behavior.
 * When a bug fix amounts to applying an existing correct pattern that was used inconsistently, lock it in with a test, then audit every other place the pattern should apply and report them to the user with a recommendation: align each in place, or, if the pattern recurs enough that repeating it is itself the debt, extract a shared abstraction. Once the user confirms scope and approach, implement it and add matching test coverage.
 
 ### Security
 
 * Follow the principles of privacy-first, zero-trust, and least privilege.
-* Implement robust input validation, output encoding, and escaping.
+* Implement robust input validation, output encoding, and escaping; parameterize queries and commands instead of building them from strings.
+* Enforce authentication and authorization server-side on every entry point; never log or expose secrets, credentials, or personal data, and keep them out of source control.
+* When auditing or reviewing for security, rank findings by severity and exploitability, give each a concrete attack scenario and a fix, and prioritize exploitable issues over theoretical ones.
 
 ### Style and Readability
 
