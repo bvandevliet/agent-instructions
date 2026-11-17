@@ -22,7 +22,7 @@ Produces layered, audience-aware technical documentation that simultaneously ser
 
 ## Guidelines
 
-> **Style:** All documentation produced by this skill must conform to the [style-guide.md](./references/style-guide.md). Key rules: imperative voice for procedures, third person for conceptual prose, present tense, Title Case headings, spell out one through nine and use digits for 10+, Oxford comma, no weasel words, no passive voice in steps, no marketing language, no unearned modal hedges.
+> **Style:** All documentation produced by this skill must conform to the [style-guide.md](./references/style-guide.md). Key rules: imperative voice for procedures, third person for conceptual prose, present tense, Title Case headings, spell out one through nine and use digits for 10+, Oxford comma, no weasel words, no passive voice in steps, no marketing language, no unearned modal hedges, short sentences (20 words in steps, 25 in prose), one term per concept, warnings before the step they apply to.
 
 ### Clarify Scope and Audience
 

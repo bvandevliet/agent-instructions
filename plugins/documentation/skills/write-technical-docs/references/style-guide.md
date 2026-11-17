@@ -205,6 +205,57 @@ Don't bury the key fact at the end.
 
 ---
 
+## Controlled-Language Rules
+
+Adapted from ASD-STE100 Simplified Technical English. These rules reduce ambiguity for all readers, including non-native English speakers and machine translation. They adopt a subset of the standard only: there is no approved-word dictionary, so never describe the output as STE-compliant.
+
+### Sentence and Paragraph Length
+
+- Procedure steps: 20 words or fewer per sentence.
+- Descriptive prose: 25 words or fewer per sentence.
+- Paragraphs: six sentences or fewer.
+
+Split longer sentences instead of stacking clauses. Code, literals, and link text do not count toward the limit.
+
+### One Term per Concept
+
+Choose one term for each concept and use it every time. Don't vary terms for style, and don't use one term for two concepts. Quote UI labels and config keys exactly, even when they conflict with the document's own term.
+
+**BAD:** "Restart the service. After the daemon comes back up, check the process."  
+**GOOD:** "Restart the service. After the service starts, check its status."
+
+### Noun Clusters
+
+Limit a noun cluster to three nouns. Rewrite longer strings with a preposition.
+
+**BAD:** "Check the database connection pool timeout setting."  
+**GOOD:** "Check the timeout setting for the database connection pool."
+
+### Articles
+
+Keep "a", "an", and "the" in steps and prose. Don't drop them to shorten a sentence.
+
+**BAD:** "Restart service after saving config."  
+**GOOD:** "Restart the service after saving the configuration."
+
+### Idioms and Phrasal Verbs
+
+Avoid idioms and phrasal verbs that have more than one meaning. Use one precise verb. Established technical terms such as "log in" and "roll back" are allowed.
+
+| Avoid | Use |
+|---|---|
+| "bring up", "kick off" | "start" |
+| "figure out" | "determine" |
+| "hook into" | "connect to" |
+| "back out" | "revert" |
+| "carry out" | "run" or "perform" |
+
+### Warnings Before Actions
+
+Place a `:::warning` or `:::danger` admonition before the step it applies to, never after. Write the instruction in imperative voice, for example "Do not delete the volume while the service is running."
+
+---
+
 ## Code and Literal Values
 
 - Use backtick inline code for: config keys, file paths, commands, env vars, flags, class/method names, UI labels.
@@ -230,3 +281,8 @@ Before finalizing, scan for:
 - [ ] All numbers: one through nine spelled out, 10+ as digits (digits always for measurements, versions, config values)
 - [ ] All acronyms spelled out in TL;DR / Overview on first use
 - [ ] No em dashes (—); replaced with a colon, semicolon, or comma pair as the grammar requires
+- [ ] Procedure sentences ≤ 20 words, descriptive sentences ≤ 25 words, paragraphs ≤ six sentences
+- [ ] One term per concept; no synonyms for variety
+- [ ] No noun clusters longer than three nouns; no dropped articles
+- [ ] No idioms or ambiguous phrasal verbs
+- [ ] Warnings and dangers placed before the step they apply to
