@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "code-review",
   "description": "Bob Vandevliet's code review skills.",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "author": {
     "name": "Bob Vandevliet",
     "url": "https://github.com/bvandevliet"
