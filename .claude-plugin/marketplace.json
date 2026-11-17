@@ -27,6 +27,11 @@
       "name": "documentation",
       "description": "Bob Vandevliet's technical end-user documentation writing skills.",
       "source": "./plugins/documentation"
+    },
+    {
+      "name": "code-review",
+      "description": "Bob Vandevliet's code review skills.",
+      "source": "./plugins/code-review"
     }
   ]
 }
