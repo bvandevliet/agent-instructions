@@ -18,11 +18,9 @@ Produces layered, audience-aware technical documentation that simultaneously ser
 - Creating runbooks, architecture docs, or onboarding guides
 - Any documentation where both technical and non-technical stakeholders are consumers
 
----
-
 ## Guidelines
 
-> **Style:** All documentation produced by this skill must conform to the [style-guide.md](./references/style-guide.md). Key rules: imperative voice for procedures, third person for conceptual prose, present tense, Title Case headings, spell out one through nine and use digits for 10+, Oxford comma, no weasel words, no passive voice in steps, no marketing language, no unearned modal hedges, short sentences (20 words in steps, 25 in prose), one term per concept, warnings before the step they apply to.
+> **Style:** All documentation produced by this skill must conform to the [style-guide.md](./references/style-guide.md). Key rules: imperative voice for procedures, third person for conceptual prose (never first person), present tense, Title Case headings, spell out one through nine and use digits for 10+ (digits always for measurements, versions, and config values), Oxford comma, no em dashes, complete sentences end with a period, no hard-wrapped prose, no weasel words, no passive voice in steps, no marketing language, no unearned modal hedges, short sentences (20 words in steps, 25 in prose, six per paragraph), one term per concept, no noun clusters over three nouns, keep articles, no idioms or ambiguous phrasal verbs, acronyms spelled out on first use in TL;DR and Overview, warnings before the step they apply to.
 
 ### Clarify Scope and Audience
 
@@ -38,8 +36,6 @@ Before writing, resolve:
 
 If producing for a mixed audience, always layer: summary first, depth after.
 
----
-
 ### Document Structure
 
 Structure the document to suit the content and audience; there is no mandatory template. That said, most technical docs benefit from some combination of these sections, and TL;DR should always come first:
@@ -51,8 +47,6 @@ Structure the document to suit the content and audience; there is no mandatory t
 - **Configuration Reference**: if the system is configurable.
 - **Troubleshooting**: common failure modes and remediation.
 - **Further Reading**: links to related docs, code, RFCs.
-
----
 
 ### TL;DR / Summary
 
@@ -74,8 +68,6 @@ The TL;DR is a **management-level executive summary**: one paragraph or 3–5 bu
 Engineers need to [one-sentence config action]. No changes to [common concern, e.g., existing auth].
 :::
 ```
-
----
 
 ### Mermaid Diagrams
 
@@ -102,8 +94,6 @@ flowchart LR
     K[Timeline / milestones] --> L[timeline or gantt]
 ```
 
----
-
 ### Procedures: Actionable and Verifiable
 
 Every procedure step must be:
@@ -124,8 +114,6 @@ Every procedure step must be:
 - "Restart if needed": no, state the condition precisely.
 - Steps that do 3 things at once: split them.
 
----
-
 ### Rationale
 
 Add a `:::note[Why?]` admonition when:
@@ -144,8 +132,6 @@ see [issue #42](link) for the migration plan.
 ```
 
 Do **not** add rationale to self-evident steps. It dilutes the signal.
-
----
 
 ### Callout Hierarchy
 
@@ -176,8 +162,6 @@ to avoid 401 errors on long-running operations.
 :::
 ```
 
----
-
 ### Configuration Reference
 
 For any configurable system, include a reference table:
@@ -193,8 +177,6 @@ Rules:
 - Include the **default**; this is the most-read column.
 - Note when values are environment-specific (dev vs. prod).
 - Cross-link to examples showing values in context.
-
----
 
 ### Troubleshooting
 
@@ -212,8 +194,6 @@ Format each entry as: **symptom → cause → remedy**.
 **Remedy:** Remove `Legacy:Key` from `appsettings.json` and restart.
 > See [migration guide](./migration-v2.md) for full changelog.
 ```
-
----
 
 ### Review Checklist
 
@@ -235,8 +215,6 @@ Before finalizing, verify:
 - [ ] No broken internal links: validate with `yarn build` before merging.
 - [ ] Generated API MDX files (`*-service/`) not edited directly
 - [ ] Style conformance verified against [style-guide.md](./references/style-guide.md)
-
----
 
 ### Docusaurus-Specific Authoring
 
@@ -345,8 +323,6 @@ This endpoint requires version 2.6 or later.
 :::
 ```
 
----
-
 ## Best Practices
 
 ### Audience Layering
@@ -381,8 +357,6 @@ A short, accurate, maintained doc beats a long, stale one. When in doubt:
 
 ### Writing Style
 See [style-guide.md](./references/style-guide.md) for the full set of tone, voice, tense, and anti-pattern rules.
-
----
 
 ## References
 

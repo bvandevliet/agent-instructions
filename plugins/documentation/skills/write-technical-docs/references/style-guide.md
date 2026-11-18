@@ -2,8 +2,6 @@
 
 Rules for voice, tone, grammar, and anti-patterns in technical end-user documentation.
 
----
-
 ## Voice
 
 Use **mixed voice** based on section type:
@@ -16,8 +14,6 @@ Use **mixed voice** based on section type:
 
 **Never** use first person ("we", "our") in documentation. It implies a relationship that may not apply to all readers, and ages poorly when teams change.
 
----
-
 ## Tone
 
 **Professional and direct.** Every sentence earns its place. Cut filler; state the fact.
@@ -25,8 +21,6 @@ Use **mixed voice** based on section type:
 - Say what the system does, not what you hope it does.
 - Don't editorialize: no praise, no apology.
 - One idea per sentence; one purpose per paragraph
-
----
 
 ## Tense
 
@@ -40,16 +34,12 @@ Use **mixed voice** based on section type:
 Exception: roadmap or planned behavior. Future tense is acceptable there, but mark it explicitly:
 > **Planned (v3.0):** The service will support batch endpoints.
 
----
-
 ## Oxford Comma
 
 **Always use it.**
 
 > "The endpoint accepts JSON, XML, and form data." ✓  
 > "The endpoint accepts JSON, XML and form data." ✗
-
----
 
 ## Em Dashes
 
@@ -61,8 +51,6 @@ Exception: roadmap or planned behavior. Future tense is acceptable there, but ma
 > "Set the timeout carefully — a value that's too low causes false failures." ✗  
 > "Set the timeout carefully: a value that's too low causes false failures." ✓
 
----
-
 ## Full Stops
 
 **Complete sentences end with a period; fragments do not.** A bullet is a complete sentence if it has (or implies) a subject and a verb. This includes a `**Label**: elaboration` bullet, which implies "is" or "means" and takes a period. Checklist criteria and parallel noun-phrase lists with no elaboration are fragments and stay bare.
@@ -71,7 +59,9 @@ Exception: roadmap or planned behavior. Future tense is acceptable there, but ma
 > "**Prerequisites**: what the reader needs before starting." ✓ (label bullet, implies "is"; takes a period)  
 > "Config keys, file paths, commands" ✓ (fragment, no verb; no period)
 
----
+## Line Wrapping
+
+**Never hard-wrap prose.** Write each paragraph, bullet, and table cell as a single line, with no line breaks mid-sentence or mid-paragraph to fit a column width; the viewer handles wrapping. Exception: when the project's existing docs or tooling enforce a column width, follow that convention.
 
 ## Heading Capitalization
 
@@ -82,8 +72,6 @@ Exception: roadmap or planned behavior. Future tense is acceptable there, but ma
 > "CONFIGURE THE SERVICE" ✗
 
 Prepositions and articles (of, the, a, in, to, for) are lowercase unless they start the heading.
-
----
 
 ## Numbers
 
@@ -102,8 +90,6 @@ When a number opens a sentence, rewrite to avoid it rather than spelling it out.
 
 > "3 endpoints are affected." → "The affected endpoints number 3." or restructure.
 
----
-
 ## Jargon and Acronyms
 
 - In **TL;DR, Overview, and Summary sections**: spell out every acronym and technical term on first use; add a plain-English gloss for non-obvious concepts.
@@ -113,8 +99,6 @@ First-use pattern:
 > "The API Gateway uses mutual TLS (mTLS) for service-to-service authentication."
 
 Do **not** re-expand the same acronym after it has been introduced in the same document.
-
----
 
 ## Anti-Patterns
 
@@ -176,8 +160,6 @@ Acceptable hedges (genuinely non-deterministic or environment-dependent):
 - "may": acceptable for behavior that is conditionally non-deterministic.
 - "depending on [specific condition]": acceptable when condition is named.
 
----
-
 ## Sentence and Paragraph Patterns
 
 ### One Sentence, One Claim
@@ -202,8 +184,6 @@ Don't bury the key fact at the end.
 - "It is important to..."  → Use a `> **Important**` callout if it's genuinely important
 - "As mentioned above..."  → Use a cross-link or restate
 - "Note that..."  → Use a `> **Note**` callout if needed, or just state the fact inline
-
----
 
 ## Controlled-Language Rules
 
@@ -254,16 +234,12 @@ Avoid idioms and phrasal verbs that have more than one meaning. Use one precise 
 
 Place a `:::warning` or `:::danger` admonition before the step it applies to, never after. Write the instruction in imperative voice, for example "Do not delete the volume while the service is running."
 
----
-
 ## Code and Literal Values
 
 - Use backtick inline code for: config keys, file paths, commands, env vars, flags, class/method names, UI labels.
 - Use fenced code blocks with explicit language hints for all multi-line examples.
 - Quote literal values exactly as they appear in the system; never paraphrase a command or config value.
 - Placeholders in commands use `<angle-brackets>`: `kubectl get pods -n <namespace>`
-
----
 
 ## Quick Checklist
 
@@ -281,6 +257,7 @@ Before finalizing, scan for:
 - [ ] All numbers: one through nine spelled out, 10+ as digits (digits always for measurements, versions, config values)
 - [ ] All acronyms spelled out in TL;DR / Overview on first use
 - [ ] No em dashes (—); replaced with a colon, semicolon, or comma pair as the grammar requires
+- [ ] No hard-wrapped prose; each paragraph and bullet is a single line (unless the project enforces a column width)
 - [ ] Procedure sentences ≤ 20 words, descriptive sentences ≤ 25 words, paragraphs ≤ six sentences
 - [ ] One term per concept; no synonyms for variety
 - [ ] No noun clusters longer than three nouns; no dropped articles

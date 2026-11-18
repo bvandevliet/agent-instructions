@@ -4,8 +4,6 @@ For syntax, all diagram types, and a live playground, see the **[official Mermai
 
 This file covers the opinionated, documentation-context-specific guidance that the official docs don't: when to use each diagram type, captions, "What to notice" callouts, and anti-patterns.
 
----
-
 ## Decision: Which Diagram Type?
 
 ```mermaid
@@ -22,8 +20,6 @@ flowchart TD
     Q5 -->|No| SKIP[No diagram needed:\nuse prose or table]
 ```
 
----
-
 ## When to Use Each Type
 
 | Diagram type | Use when |
@@ -34,8 +30,6 @@ flowchart TD
 | `graph` / C4 | System components, service dependencies, deployment topology |
 | `erDiagram` | Data model, schema, or API resource relationships |
 | `timeline` / `gantt` | Release milestones, project phases, migration windows |
-
----
 
 ## Caption and "What to Notice" Pattern
 
@@ -53,8 +47,6 @@ Every diagram needs:
 > p99 latency of the fraud service directly impacts checkout latency.
 > See [Performance Considerations](#performance) for mitigation options.
 \`\`\`
-
----
 
 ## Anti-Patterns
 
